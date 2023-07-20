@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
+import '../widgets/upcomming_card.dart';
+import 'health_needs.dart';
+import 'nearby_doctors.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -31,7 +35,24 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(14),
-        children: [],
+        children: [
+          //Upcoming card
+          UpcomingCard(),
+          SizedBox(height: 20),
+          Text(
+            'Health Needs',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+          SizedBox(height: 15),
+          // Health needs
+          HealthNeeds(),
+          SizedBox(height: 30),
+          Text('Nearby Doctors',
+              style: Theme.of(context).textTheme.headlineSmall),
+          SizedBox(height: 15),
+          // Nearby Doctors
+          NearbyDoctors(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
